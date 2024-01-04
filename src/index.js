@@ -11,7 +11,7 @@ import { CartProvider } from './context/cart.context';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Clothing-Shop">
       <UserProvider>
         <CategoriesProvider>
           <CartProvider>

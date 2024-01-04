@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
 import {
     getAuth,
     signInWithRedirect,
@@ -21,16 +21,16 @@ import {
   getDocs
 } from 'firebase/firestore';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCafPojtETqWYxP3JRXdnshSWvadCaH0cU",
-  authDomain: "crown-clothing-db-5cf50.firebaseapp.com",
-  projectId: "crown-clothing-db-5cf50",
-  storageBucket: "crown-clothing-db-5cf50.appspot.com",
-  messagingSenderId: "142201920393",
-  appId: "1:142201920393:web:3dd404d8580aa2e27f9f58"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCafPojtETqWYxP3JRXdnshSWvadCaH0cU",
+//   authDomain: "crown-clothing-db-5cf50.firebaseapp.com",
+//   projectId: "crown-clothing-db-5cf50",
+//   storageBucket: "crown-clothing-db-5cf50.appspot.com",
+//   messagingSenderId: "142201920393",
+//   appId: "1:142201920393:web:3dd404d8580aa2e27f9f58"
+// };
 
-const firebaseApp = initializeApp(firebaseConfig);
+// const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 

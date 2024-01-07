@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Clothing-Shop/static/css/main.12d31122.css",
-    "main.js": "/Clothing-Shop/static/js/main.549dcd76.js",
+    "main.css": "/Clothing-Shop/static/css/main.9aebe9f5.css",
+    "main.js": "/Clothing-Shop/static/js/main.a2af24c5.js",
     "static/js/787.6b7abe35.chunk.js": "/Clothing-Shop/static/js/787.6b7abe35.chunk.js",
     "static/media/shopping-bag.svg": "/Clothing-Shop/static/media/shopping-bag.cfde1decc45a06eff1f2a4ec5ae00b01.svg",
     "static/media/crown.svg": "/Clothing-Shop/static/media/crown.3a4e2b15908e7a4c25343677d232b7e6.svg",
     "index.html": "/Clothing-Shop/index.html",
-    "main.12d31122.css.map": "/Clothing-Shop/static/css/main.12d31122.css.map",
-    "main.549dcd76.js.map": "/Clothing-Shop/static/js/main.549dcd76.js.map",
+    "main.9aebe9f5.css.map": "/Clothing-Shop/static/css/main.9aebe9f5.css.map",
+    "main.a2af24c5.js.map": "/Clothing-Shop/static/js/main.a2af24c5.js.map",
     "787.6b7abe35.chunk.js.map": "/Clothing-Shop/static/js/787.6b7abe35.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12d31122.css",
-    "static/js/main.549dcd76.js"
+    "static/css/main.9aebe9f5.css",
+    "static/js/main.a2af24c5.js"
   ]
 }

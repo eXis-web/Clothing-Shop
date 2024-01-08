@@ -1,13 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
+const filteredProps = ['imageUrl']; // Вкажіть тут всі властивості, які вам потрібні
 
-export const BackgroundImage = styled.div`
+const filteredPropsFunction = (prop) => !filteredProps.includes(prop);
+
+export const BackgroundImage = styled.div.withConfig({
+    shouldForwardProp: filteredPropsFunction,
+})`
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-image: ${({imageUrl}) => `url(${imageUrl})`};
-`
+    background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+`;
 
 export const Body = styled.div`
     height: 90px;
@@ -21,22 +26,22 @@ export const Body = styled.div`
     opacity: 0.7;
     position: absolute;
 
-    h2 {
-        font-weight: bold;
-        margin: 0 6px 0;
-        font-size: 22px;
-        color: #4a4a4a;
-        text-transform: uppercase;
-        }
+h2 {
+    font-weight: bold;
+    margin: 0 6px 0;
+    font-size: 22px;
+    color: #4a4a4a;
+    text-transform: uppercase;
+}
 
-    p {
-        font-weight: lighter;
-        font-size: 16px;
-    }
-    `
+p {
+    font-weight: lighter;
+    font-size: 16px;
+}
+`;
 
 export const DirectoryItemContainer = styled.div`
- min-width: 30%;
+    min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
     display: flex;
@@ -46,28 +51,25 @@ export const DirectoryItemContainer = styled.div`
     margin: 0 7.5px 15px;
     overflow: hidden;
 
-    &:hover {
-        cursor: pointer;
+&:first-child {
+    margin-right: 7.5px;
+}
 
-        & ${BackgroundImage} {
-            transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-        }
+&:last-child {
+    margin-left: 7.5px;
+}
 
-        & ${Body} {
-            opacity: 0.9;
-        }
+&:hover {
+    cursor: pointer;
+
+    ${BackgroundImage} {
+        transform: scale(1.1);
+        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    &.large {
-        height: 380px;
+    ${Body} {
+        opacity: 0.9;
     }
-
-    &:first-child {
-        margin-right: 7.5px;
-    }
-
-    &:last-child {
-        margin-left: 7.5px;
-    }
+}
 `;
+

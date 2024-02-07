@@ -8,7 +8,7 @@ import {
 
 export const CartDropdownContainer = styled.div`
     position: absolute;
-    width: 240px;
+    width: 280px;
     height: 340px;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ export const EmptyMessage = styled.span`
 `;
 
 export const CartItems = styled.div`
-    height: 240px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     overflow: scroll;

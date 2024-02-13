@@ -20,7 +20,6 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyCafPojtETqWYxP3JRXdnshSWvadCaH0cU",
   authDomain: "crown-clothing-db-5cf50.firebaseapp.com",
@@ -29,6 +28,7 @@ const firebaseConfig = {
   messagingSenderId: "142201920393",
   appId: "1:142201920393:web:3dd404d8580aa2e27f9f58"
 };
+
 // eslint-disable-next-line no-unused-vars
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -88,16 +88,20 @@ export const createUserDocumentFromAuth = async (
   const userSnapshot = await getDoc(userDocRef);
 
   if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
+    const { displayName, email, uid } = userAuth;
     const createdAt = new Date();
 
+    // Convert the UserImpl object to a plain JavaScript object
+    const simpleUserObject = {
+      displayName,
+      email,
+      uid,
+      createdAt,
+      ...additionalInformation,
+    };
+
     try {
-      await setDoc(userDocRef, {
-        displayName,
-        email,
-        createdAt,
-        ...additionalInformation,
-      });
+      await setDoc(userDocRef, simpleUserObject);
     } catch (error) {
       console.log('error creating the user', error.message);
     }

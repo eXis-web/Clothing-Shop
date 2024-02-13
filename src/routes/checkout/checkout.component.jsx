@@ -4,10 +4,10 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 import './checkout.styles.jsx';
 
 import {
-  CheckoutContainer,
-  CheckoutHeader,
-  HeaderBlock,
-  Total,
+    CheckoutContainer,
+    CheckoutHeader,
+    HeaderBlock,
+    Total,
 } from './checkout.styles';
 
 

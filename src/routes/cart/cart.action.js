@@ -14,7 +14,6 @@ const addCardItem = (cartItems, productToAdd) => {
     }
     return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
-
 const removeCartItem = (cartItems, cartItemToRemove) => {
     const existingCartItem = cartItems.find(
         (cartItem) => cartItem.id === cartItemToRemove.id
@@ -28,27 +27,20 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
             : cartItem
     );
 };
-
 const clearCartItem = (cartItems, cartItemToClear) =>
     cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
-
-
 export const setIsCartOpen = (boolean) => ({
     type: CART_ACTION_TYPES.SET_IS_CART_OPEN,
     payload: boolean
 });
-
-
 export const addItemToCart = (cartItems, productToAdd) => {
     const newCartItems = addCardItem(cartItems, productToAdd);
     return { type: CART_ACTION_TYPES.SET_CART_ITEMS, payload: newCartItems };
 }
-
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
     const newCartItems = removeCartItem(cartItems, cartItemToRemove);
     return { type: CART_ACTION_TYPES.SET_CART_ITEMS, payload: newCartItems };
 }
-
 export const clearItemFromCart = (cartItems, cartItemToClear) => {
     const newCartItems = clearCartItem(cartItems, cartItemToClear);
     return { type: CART_ACTION_TYPES.SET_CART_ITEMS, payload: newCartItems };

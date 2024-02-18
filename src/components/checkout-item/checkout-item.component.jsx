@@ -11,7 +11,6 @@ import {
     Value,
     RemoveButton,
 } from './checkout-item.styles';
-
 const CheckoutItem = ({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
     const cartItems = useSelector(selectCartItems);

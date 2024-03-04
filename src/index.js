@@ -1,26 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { Elements } from '@stripe/react-stripe-js';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { Elements } from "@stripe/react-stripe-js";
 
-import {App} from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { store, persistor}  from './store/store';
-import { stripePromise } from 'utils/stripe/stripe.utils';
-import './index.scss';
+import App from "./App";
+import { store, persistor } from "./store/store";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <BrowserRouter basename="/Clothing-Shop">
-                <Elements stripe={stripePromise}>
-                    <App />
-                </Elements>    
-            </BrowserRouter>
-        </PersistGate>
-    </Provider>
+import "./index.scss";
+
+const rootElement = document.getElementById("root");
+
+createRoot(rootElement).render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <BrowserRouter>
+                    <Elements stripe={stripePromise}>
+                        <App />
+                    </Elements>
+                </BrowserRouter>
+            </PersistGate>
+        </Provider>
+    </React.StrictMode>
 );
-
-reportWebVitals();

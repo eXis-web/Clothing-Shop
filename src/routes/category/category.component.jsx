@@ -3,7 +3,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CategoryContainer,Title} from './category.styles.jsx';
-import { selectCategoriesIsLoading, selectCategoriesMap } from 'store/categories/category.selector';
+import { selectCategoriesIsLoading, selectCategoriesMap } from 'store/categories/category.selector.ts';
 import Spinner from 'components/spinner/spinner.component';
 
 const Category = () => {

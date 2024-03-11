@@ -7,7 +7,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import  {App}  from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { store, persistor}  from './store/store';
+import { store, persistor}  from './store/store.ts';
 import { stripePromise } from 'utils/stripe/stripe.utils';
 import './index.scss';
 

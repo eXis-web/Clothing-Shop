@@ -5,15 +5,13 @@ import { setCartItems, setIsCartOpen } from './cart.action.ts';
 import { CartItem } from './cart.types';
 
 export type CartState = {
-    isCartOpen: boolean;
-    cartItems: CartItem[];
+    readonly isCartOpen: boolean;
+    readonly cartItems: CartItem[];
 }
 
 export const CART_INITIAL_STATE: CartState = {
     isCartOpen: false,
     cartItems: [],
-    // cartCount: 0,
-    // cartTotal: 0
 };
 
 export const cartReducer = (

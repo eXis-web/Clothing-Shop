@@ -5,10 +5,9 @@ import { StripeCardElement } from '@stripe/stripe-js';
 import { selectCartTotal } from '../../store/cart/cart.selector.ts';
 import { selectCurrentUser } from '../../store/user/user.selector.ts';
 
-import { FormContainer } from './payment-form.styles.jsx';
 import { BUTTON_TYPE_CLASSES } from '../button/button.component.tsx';
 
-import { PaymentButton, PaymentFormContainer } from './payment-form.styles.jsx';
+import { PaymentButton, PaymentFormContainer,FormContainer } from './payment-form.styles.tsx';
 
 const ifValidCardElement = ( card: StripeCardElement | null ): card is StripeCardElement => card !== null;
 

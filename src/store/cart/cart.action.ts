@@ -1,8 +1,8 @@
-import { CategoryItem } from 'store/categories/category.types';
+import { CategoryItem } from '../../store/categories/category.types';
 // @ts-ignore
 import { CART_ACTION_TYPES, CartItem } from './cart.types.ts';
 // @ts-ignore
-import { createAction, withMatcher, ActionWithPayload} from 'utils/reducer/reducer.utils.ts';
+import { createAction, withMatcher, ActionWithPayload} from '../../utils/reducer/reducer.utils.ts';
 
 const addCardItem = (
     cartItems: CartItem[],

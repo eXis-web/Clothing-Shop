@@ -1,8 +1,8 @@
 import { AnyAction } from 'redux-saga';
 // @ts-ignore
 import { signInFailed, signOutFailed, signUpFailed, signInSuccess, signOutSuccess } from './user.action.ts';
-
-import { UserData } from 'utils/firebase/firebase.utils.js';
+// @ts-ignore
+import { UserData } from 'utils/firebase/firebase.utils.ts';
 
 export type UserState = {
     readonly currentUser: UserData | null;

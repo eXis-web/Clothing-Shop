@@ -3,14 +3,12 @@ import SignInForm from "../../components/sign-in-form copy/sign-in-form.componen
 import { AuthenticationContainer } from './authentication.styles';
 
 const Authentication = () => {
-    
     return (
         <AuthenticationContainer>
-            <SignInForm />
-            <SignUpForm />
+        <SignInForm />
+        <SignUpForm />
         </AuthenticationContainer>
-    )
+    );
 };
 
 export default Authentication;
-

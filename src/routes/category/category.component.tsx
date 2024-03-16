@@ -1,4 +1,4 @@
-import ProductCard from '../../components/product-card/product-card.component.jsx';
+import ProductCard from '../../components/product-card/product-card.component.tsx';
 import { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';

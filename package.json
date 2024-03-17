@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://exis-web.github.io/Clothing-Shop/",
   "dependencies": {
+    "@apollo/client": "^3.9.7",
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@stripe/react-stripe-js": "^2.5.1",

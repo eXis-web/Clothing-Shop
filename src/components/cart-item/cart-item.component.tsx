@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo    } from 'react';
 import { CartItemContainer, ItemDetails } from './cart-item.styles';
 import {CartItem as TCartItem} from '../../store/cart/cart.types';
 
@@ -7,7 +7,7 @@ type CartItemsProps = {
     cartItem: TCartItem;
 };
 
-const CartItem: FC<CartItemsProps> = ({ cartItem }) => {
+const CartItem: FC<CartItemsProps> = memo(({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
     return (
         <CartItemContainer>
@@ -20,6 +20,6 @@ const CartItem: FC<CartItemsProps> = ({ cartItem }) => {
             </ItemDetails>
         </CartItemContainer>
     );
-};
+});
 
 export default CartItem;

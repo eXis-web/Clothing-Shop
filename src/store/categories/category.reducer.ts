@@ -1,7 +1,5 @@
-// @ts-ignore
 import { Category } from './category.types.ts';
 import { AnyAction } from 'redux-saga';
-// @ts-ignore
 import { fetchCategoriesFailed, fetchCategoriesSuccess,fetchCategoriesStart} from './category.action.ts';
 
 export type CategoriesState = {
@@ -19,14 +17,16 @@ export const CATEGORIES_INITIAL_STATE: CategoriesState = {
 export const categoriesReducer = (
     state = CATEGORIES_INITIAL_STATE,
     action: AnyAction
-): CategoriesState => {
+    ): CategoriesState => {
     if (fetchCategoriesStart.match(action)) {
         return { ...state, isLoading: true };
     }
+
     if (fetchCategoriesSuccess.match(action)) {
         return { ...state, categories: action.payload, isLoading: false };
     }
-    if (fetchCategoriesFailed) {
+
+    if (fetchCategoriesFailed.match(action)) {
         return { ...state, error: action.payload, isLoading: false };
     }
 

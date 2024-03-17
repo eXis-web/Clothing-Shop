@@ -1,6 +1,5 @@
-// @ts-ignore
 import { Action, ActionWithPayload, createAction, withMatcher } from '../../utils/reducer/reducer.utils.ts';
-// @ts-ignore
+
 import { CATEGORIES_ACTION_TYPES, Category } from '../categories/category.types.ts';
 
 export type FetchCategoriesStart = Action<CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START>

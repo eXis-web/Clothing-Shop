@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { store, persistor}  from './store/store.ts';
 import { stripePromise } from './utils/stripe/stripe.utils';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -24,3 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 
 reportWebVitals();
+
+serviceWorkerRegistration.register();

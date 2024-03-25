@@ -1,13 +1,11 @@
 import { screen, fireEvent } from "@testing-library/react";
-// import * as reactRedux from "react-redux";
 import Navigation from "../navigation.component";
 import { renderWithProviders } from "../../../utils/test/test.utils";
 import { signOutStart } from "../../../store/user/user.action";
+import * as reactRedux from 'react-redux';
 
-// Передбачувана функція useDispatch, яка буде використовуватися в нашому тесті
 const mockDispatch = jest.fn();
 
-// Мокаем функцію useDispatch в модулі react-redux
 jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'),
     useDispatch: () => mockDispatch
@@ -15,7 +13,6 @@ jest.mock('react-redux', () => ({
 
 describe('Navigation tests', () => {
     beforeEach(() => {
-        // Скидуємо стан мокування перед кожним тестом
         jest.clearAllMocks();
     });
 
@@ -79,23 +76,25 @@ describe('Navigation tests', () => {
         expect(dropDownTextElement).toBeInTheDocument();
     });
 
-    test('It should dispatch signOutStart when clicking on the sign out link', async () => {
-        renderWithProviders(<Navigation />, {
-            preloadedState: {
-                user: {
-                    currentUser: {},
-                },
-            },
+    test('It should dispatch signOutStart action when clicking on the sign out link', async () => {
+            const spy = jest.spyOn(reactRedux, 'useDispatch');
+
+            renderWithProviders(<Navigation />, {
+                preloadedState: {
+                    user: {
+                        currentUser: {}
+                    }
+                }
+            });
+            
+            const signOutLinkElement = screen.getByText(/Sign out/i);
+            expect(signOutLinkElement).toBeInTheDocument();
+
+            await fireEvent.click(signOutLinkElement);
+            expect(mockDispatch).toHaveBeenCalled();
+            const signOutAction = signOutStart();
+            expect(mockDispatch).toHaveBeenCalledWith(signOutAction);
+
+            spy.mockRestore();
         });
-        
-        const signOutLinkElement = screen.getByText(/Sign out/i);
-        expect(signOutLinkElement).toBeInTheDocument();
-
-        await fireEvent.click(signOutLinkElement);
-        expect(mockDispatch).toHaveBeenCalled();
-        const signOutAction = signOutStart();
-        expect(mockDispatch).toHaveBeenCalledWith(signOutAction);
-
-        mockDispatch.mockClear();  
-    });
 });
